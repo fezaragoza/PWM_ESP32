@@ -11,10 +11,10 @@ PWM::~PWM()
 
 void PWM::setup(uint8_t pin, uint8_t channel, double frequency, uint8_t bits_resolution, bool on_state)
 {
-	_pin = pin;
-	_channel = channel;
-	_frequency = frequency;
-	_on_state = on_state;
+	_pin		= pin;
+	_channel	= channel;
+	_frequency	= frequency;
+	_on_state	= on_state;
 	_resolution = pow(2, bits_resolution) - 1;
 	pinMode(_pin, OUTPUT);
 	ledcSetup(_channel, _frequency, bits_resolution);
